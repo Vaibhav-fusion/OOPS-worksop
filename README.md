@@ -1,85 +1,94 @@
-# Product Inventory Backend
+# Product Inventory API
 
-This project is a backend CRUD application built as part of the **SESD Workshop** activity. It demonstrates the use of **Object-Oriented Programming (OOP)** concepts in a **Node.js + TypeScript** backend with proper project structure.
+A lightweight backend API for managing products. This repository demonstrates a modular, object-oriented approach using **Node.js** and **TypeScript**, organized for clarity and maintainability.
 
 ---
 
-## Features
+## Key Features
 
-* Create, read (single & list), update, and delete products
-* Search products by name or category
-* Pagination support
-* Input validation and clean error handling
-* MongoDB Atlas integration
+- Full CRUD for products (create, read, update, delete)
+- Search and filter products by name or category
+- Pagination support for list endpoints
+- Consistent input validation and structured error responses
+- Configurable MongoDB connection (Atlas or self-hosted)
 
 ---
 
 ## Tech Stack
 
-* Node.js
-* Express.js
-* TypeScript
-* MongoDB Atlas
-* Mongoose
+- Node.js
+- Express
+- TypeScript
+- MongoDB (Mongoose)
 
 ---
 
-## Project Structure
+## Project Layout
 
 ```
 src/
-│── app.ts
-│── server.ts
-│── config/db.ts
-│── controllers/
-│── services/
-│── repositories/
-│── models/
-│── routes/
+├─ app.ts
+├─ server.ts
+├─ config/db.ts
+├─ controllers/
+├─ services/
+├─ repositories/
+├─ models/
+└─ routes/
 ```
 
 ---
 
-## Environment Variables
+## Environment
 
-Create a `.env` file in the root directory:
+Create a `.env` file at the project root with values like:
 
 ```
 PORT=3000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/productDB
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<your_db>
 ```
+
+Tip: store credentials securely and avoid committing `.env` to source control.
 
 ---
 
-## Running the Project
+## Start the App
 
 ```bash
 npm install
 npm run dev
 ```
 
-Server runs on `http://localhost:3000`.
+The server will be available at `http://localhost:3000` by default.
 
 ---
 
-## API Overview
+## API Endpoints
 
-* `POST /api/products` – Create product
-* `GET /api/products` – Get all products (search & pagination)
-* `GET /api/products/:id` – Get product by ID
-* `PUT /api/products/:id` – Update product
-* `DELETE /api/products/:id` – Delete product
-
----
-
-## OOP Design
-
-* Controllers handle HTTP requests
-* Services contain business logic
-* Repositories handle database operations
+- `POST /api/products` — Create a new product
+- `GET /api/products` — List products (supports search & pagination)
+- `GET /api/products/:id` — Retrieve a product by ID
+- `PUT /api/products/:id` — Update a product
+- `DELETE /api/products/:id` — Remove a product
 
 ---
 
-## Author
+## Architecture Notes
 
-Soham Saranga
+This project follows a layered structure:
+
+- **Controllers** — Handle HTTP layer and request/response
+- **Services** — Contain business logic
+- **Repositories** — Encapsulate database interactions
+
+---
+
+## Contributing & License
+
+Contributions are welcome — open an issue or submit a pull request. This project is provided under the MIT License.
+
+---
+
+## Maintainer
+
+Vaibhav Singh
